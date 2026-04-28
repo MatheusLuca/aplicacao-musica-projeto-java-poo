@@ -20,16 +20,8 @@ public class Calculos {
         return quantidadeAvaliacao;
     }
 
-    public void setQuantidadeAvaliacao(int quantidadeAvaliacao) {
-        this.quantidadeAvaliacao = quantidadeAvaliacao;
-    }
-
     public double getSomarAvaliacoes() {
         return somarAvaliacoes;
-    }
-
-    public void setSomarAvaliacoes(double somarAvaliacoes) {
-        this.somarAvaliacoes = somarAvaliacoes;
     }
 
     public void contarTotalAvaliacao(){
@@ -42,7 +34,8 @@ public class Calculos {
     public void rodarAvaliacoes(){
         Scanner sc = new Scanner(System.in);
         setAvaliacao(1);
-        while(getAvaliacao() != 0 ){
+
+        while(getAvaliacao()!= 0){
             System.out.println("Digite uma nota para a faixa: ");
             double notaMusica = sc.nextDouble();
             sc.nextLine();
@@ -50,10 +43,13 @@ public class Calculos {
             somarNotasAvaliacao(notaMusica);
             System.out.println("Digite 0 para sair! 1 para continuar avaliando");
             int avaliacao = sc.nextInt();
+
+          while( avaliacao !=
+          0 && avaliacao != 1){
+              System.out.println("Valor invalido digite 0 ou 1!");
+              avaliacao = sc.nextInt();
+          }
             setAvaliacao(avaliacao);
         }
     }
-
-
-
 }
